@@ -5,6 +5,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        // Create two instances using the 'Job' class constructor with specific values
         Job job1 = new Job();
         job1._company = "Microsoft";
         job1._jobTitle = "Software Engineer";
