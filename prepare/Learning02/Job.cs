@@ -6,7 +6,7 @@ public class Job
     public int _startYear;
     public int _endYear;
     
-    // Method to display job details
+    // Method to display job information
     public void Display()
     {
         Console.WriteLine($"{_jobTitle} ({_company}) {_startYear}-{_endYear}");
