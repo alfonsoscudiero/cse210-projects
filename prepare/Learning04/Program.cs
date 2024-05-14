@@ -30,14 +30,10 @@ class Program
         Console.WriteLine(student3.GetSummary());
         Console.WriteLine(student3.GetWritingInformation());
 
-        // WritingAssignment student5 = new WritingAssignment();
+        // WritingAssignment student6 = new WritingAssignment("Smith", "Religion", "The Book of Mormon");
         // Console.WriteLine();
-        // Console.WriteLine(student5.GetSummary());
-
-        // WritingAssignment.student6 = new WritingAssignment("Smith", "Religion", "The Book of Mormon");
-        // Console.WriteLine();
-        // Console.WriteLine(student3.GetSummary());
-        // Console.WriteLine(student3.GetWritingInformation());
+        // Console.WriteLine(student6.GetSummary());
+        // Console.WriteLine(student6.GetWritingInformation());
 
     }
 }
