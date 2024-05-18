@@ -14,14 +14,24 @@ public class Activity
         _name = name;
         _description = description;
     }
+    public void GetAndSetDuration()
+    {
+        int duration;
+        do
+        {
+            Console.Write("How long, in seconds, would you like for your session? ");
+        } 
+        while (!int.TryParse(Console.ReadLine(), out duration) || duration <= 0);
+
+        _duration = duration;
+    }
+
+    // Getter for duration
     public int GetDuration()
     {
         return _duration;
     }
-    public void SetDuration(int duration)
-    {
-        _duration = duration;
-    }
+
     // Method to display starting message
     public void DisplayStartingMessage()
     {
@@ -35,6 +45,7 @@ public class Activity
         Console.WriteLine("\nWell done!!");
         ShowSpinner(3);
     }
+
     // Method to display a spinner animation
     public void ShowSpinner(int seconds)
     {
@@ -58,7 +69,7 @@ public class Activity
         {
             string s = animationString[i];
             Console.Write(s);
-            Thread.Sleep(500);
+            Thread.Sleep(250);
             Console.Write("\b \b");
 
             i++;
