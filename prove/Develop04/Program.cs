@@ -1,4 +1,5 @@
 using System;
+using System.Threading;
 
 class Program
 {
@@ -21,27 +22,59 @@ class Program
             if (choice == "1")
             {
                 // Create the BreathingActivity object
-                BreathingActivity breathingActivity = new BreathingActivity("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.");
+                BreathingActivity breathingActivity = new BreathingActivity();
                 
                 // Run the breathing activity
                 breathingActivity.Run();
 
                 // Clear the console and display the menu again
                 Console.Clear();
-                continue;  // 
+                continue;  
             }
 
-            if (choice == "4")
+            else if (choice == "2")
+            {
+                // Crate a ReflectingActivity
+                ReflectingActivity reflectingActivity = new ReflectingActivity();
+
+                // Run the reflecting activity
+                reflectingActivity.Run();
+
+                // Clear the console and display the menu again
+                Console.Clear();
+                continue;
+            }
+
+            else if (choice == "3")
+            {
+                // Create a ListingActivity object
+                ListingActivity listingActivity = new ListingActivity();
+
+                // Run the listing activity
+                listingActivity.Run();
+
+                // Clear the console and display the menu again
+                Console.Clear();
+                continue;
+
+            }
+
+
+
+            else if (choice == "4")
             {
                 // Exit the program
-                Console.WriteLine("Exiting the app. Visit us again!");
+                Console.WriteLine("\nExiting the app. Visit us again!\n");
                 running = false;
             }   
 
             else
             {
                 // Invalid choice
-                Console.WriteLine("Invalid choice. Please select a valid choice from the menu.\n");
+                Console.WriteLine("Invalid choice. Please select a valid choice from the menu.");
+                Thread.Sleep(2000);
+                Console.Clear();
+                continue;  // 
             }
         }
     } 
