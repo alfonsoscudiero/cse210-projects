@@ -3,7 +3,7 @@ using System;
 public class BreathingActivity : Activity
 {
     // Constructor
-    public BreathingActivity(string name, string description) : base(name, description)
+    public BreathingActivity() : base("Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing.")
     {
     }
     // Method to run the activity
@@ -15,16 +15,7 @@ public class BreathingActivity : Activity
         Console.WriteLine();
 
         // Get duration from the user
-        int duration;
-        do
-        {
-            Console.Write("How long, in seconds, would you like for your session? ");
-        }
-        // test the parsing operation. If it fails (the expression 
-        // evaluates to 'true'), the loop continues to prompt the user
-        while (!int.TryParse(Console.ReadLine(), out duration) || duration <= 0);
-
-        SetDuration(duration);
+        GetAndSetDuration();
 
         // Display Starting Message
         DisplayStartingMessage();
@@ -44,6 +35,6 @@ public class BreathingActivity : Activity
         // Display Ending Message
         DisplayEndingMessage();
         Console.WriteLine($"\nYou have completed another {GetDuration()} seconds of the {_name}.");
-        ShowSpinner(3);
+        ShowSpinner(4);
     }
 }
