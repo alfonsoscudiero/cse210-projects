@@ -7,6 +7,13 @@ public abstract class Goal
     protected string _description;
     protected string _points;
 
+    // Constructor to initialize the common attributes; must be implemented by derived classes
+    public Goal(string name, string description, string points)
+    {        
+        _shortName = name;
+        _description = description;
+        _points = points;
+    }
     // Getter and Setters methods
     public string GetName()
     {
@@ -32,15 +39,9 @@ public abstract class Goal
     {
         _points = points;
     }
-    // Constructor to initialize the common attributes; must be implemented by derived classes
-    public Goal(string name, string description, string points)
-    {        
-        _shortName = name;
-        _description = description;
-        _points = points;
-    }
+    
     // Abstract method to record an event
-    public abstract void RecordEvent();
+    public abstract int RecordEvent();
 
     // Abstract method to check if the goal is completed
     public abstract bool IsComplete();
@@ -51,5 +52,7 @@ public abstract class Goal
         string status = IsComplete() ? "[X]" : "[ ]"; // Ternary operator
         return $"{status} {_shortName} ({_description})";
     }
+    
+    // Abstract method to provide all the details of a goal to save to a file
     public abstract string GetStringRepresentation();
 }

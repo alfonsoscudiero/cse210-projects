@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        GoalManager manager = new GoalManager();
-        manager.Start();
+        GoalManager goalManager = new GoalManager();
+        goalManager.Start();
     }
 }

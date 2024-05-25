@@ -2,14 +2,19 @@ using System;
 
 public class EternalGoal : Goal
 {
+    private int _totalPointEarned;
+
     // Call constructor from base
     public EternalGoal(string name, string description, string points) : base(name, description, points)
     {
-        // No additional attributes to initialize
+        _totalPointEarned = 0;
     }
     // Method to Record an event (Is eternal and never completes)
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
+        int points = int.Parse(_points);
+        _totalPointEarned += points;
+        return points; // Eternal goals just return points
     }
     // Method to check if the goal is complete
     public override bool IsComplete()
@@ -19,6 +24,12 @@ public class EternalGoal : Goal
     // Method to get a string of the goal for saving to a text file
     public override string GetStringRepresentation()
     {
-        return $"EternalGoal: %% {_shortName}, %% {_description}, %% {_points}";
+        return $"EternalGoal, {_shortName}, {_description}, {_points}, {_totalPointEarned}";
+    }
+
+    // Method to set total points earned when loading goals
+    public void SetTotalPointsEarned(int points)
+    {
+        _totalPointEarned = points;
     }
 }
