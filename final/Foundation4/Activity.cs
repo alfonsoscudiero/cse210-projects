@@ -27,6 +27,8 @@ public abstract class Activity
     {
         return $"{_date.ToString("dd MMM yyyy")} {GetType().Name} ({_duration} min) - Distance {GetDistance():F1} miles, Speed {GetSpeed():F1} mph, Pace: {GetPace():F1} min per miles";
     }
+    
+    // Method to provide access to '_duration' variable within the derived classes
     protected int GetDuration()
     {
         return _duration;
